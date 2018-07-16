@@ -1,0 +1,33 @@
+{
+  "name": "vrmt-forms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "git submodule update --init --recursive",
+    "test": "npm run lint",
+    "start": "npm run build:icons && python -m SimpleHTTPServer 8000",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint css/",
+    "build": "npm run build:icons",
+    "build:icons": "svg-sprite-generate -c img/icons.csv -o img/icons.svg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shgysk8zer0/vrmt-forms.git"
+  },
+  "author": "Chris Zuber <shgysk8zer0@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/shgysk8zer0/vrmt-forms/issues"
+  },
+  "homepage": "https://github.com/shgysk8zer0/vrmt-forms#readme",
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "stylelint": "^9.3.0",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^1.0.5"
+  }
+}
