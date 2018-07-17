@@ -9,20 +9,64 @@
 	</head>
 	<body class="scroll-smooth background-primary color-default font-main border-box">
 		<header>
-			<button type="button" data-show-modal="#test-dialog">Test</button>
+			<button type="button" data-show-modal="#schedule-maintenance-dialog">
+				<svg class="current-color icon">
+					<use xlink:href="img/icons.svg#plus" />
+				</svg>
+			</button>
 		</header>
 		<aside></aside>
-		<main></main>
+		<main>
+			<maintenance-list class="card shadow block"></maintenance-list>
+		</main>
 		<footer></footer>
-		<dialog id="test-dialog" class="card shadow-dark animation-speed-normal animation-ease-in-out fadeInUp">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<div class="clearfix">
-				<button type="button" data-close="#test-dialog" class="float-right">
+		<dialog id="schedule-maintenance-dialog">
+			<form name="schedule-maintenance">
+				<datalist id="maintenance-suggestions">
+					<option value="Oil change" />
+					<option value="Rotate tires" />
+				</datalist>
+				<fieldset>
+					<div class="card">
+						<label for="maintenance-title" title="Title">
+							<svg class="current-color icon">
+								<use xlink:href="img/icons.svg#tasklist" />
+							</svg>
+						</label>
+						<input type="text" name="name" placeholder="Title" autocomplete="off" list="maintenance-suggestions" pattern="[A-z ]+" required="" />
+					</div>
+					<label for="maintenance-due" title="Due">
+						<svg class="current-color icon">
+							<use xlink:href="img/icons.svg#calendar" />
+						</svg>
+					</label>
+					<input type="date" name="due" placeholder="YYYY-mm-dd" required="" />
+				</div>
+				</fieldset>
+				<br />
+				<button type="submit" title="Submit">
+					<svg class="current-color icon">
+						<use xlink:href="img/icons.svg#check" />
+					</svg>
+				</button>
+				<button type="reset" title="Cancel" class="btn-danger" data-close="#schedule-maintenance-dialog">
+					<svg class="current-color icon">
+						<use xlink:href="img/icons.svg#x" />
+					</svg>
+				</button>
+			</form>
+		</dialog>
+		<template id="maintenance-item-template">
+			<div class="maintenance-item">
+				<b data-field="name"></b>
+				<time data-field="due"></time>
+				<button type="button" class="btn-danger" data-action="complete" title="Remove">
 					<svg class="current-color icon">
 						<use xlink:href="img/icons.svg#x" />
 					</svg>
 				</button>
 			</div>
-		</dialog>
+			<hr />
+		</template>
 	</body>
 </html>

@@ -5,6 +5,8 @@ organization,img/octicons/organization.svg
 user-home,img/adwaita-icons/places/user-home.svg
 sign-in,img/octicons/sign-in.svg
 sign-out,img/octicons/sign-out.svg
+plus,img/octicons/plus.svg
+minus,img/octicons/minus.svg
 dialog-password,img/adwaita-icons/status/dialog-password.svg
 file-pdf,img/octicons/file-pdf.svg
 office-spreadsheet,img/adwaita-icons/mimetypes/x-office-spreadsheet.svg

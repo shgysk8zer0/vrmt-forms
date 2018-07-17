@@ -12,3 +12,11 @@ dialog {
 	border: none;
 	max-width: 95vw;
 }
+
+.btn-danger {
+	background: var(--button-danger-background);
+}
+
+.btn-danger:active {
+	background: var(--button-danger-active-background);
+}
