@@ -26,7 +26,7 @@
   "devDependencies": {
     "eslint": "^5.1.0",
     "eslint-plugin-async-await": "0.0.0",
-    "stylelint": "^9.3.0",
+    "stylelint": "^9.10.1",
     "svg-sprite-generator": "0.0.7",
     "svgo": "^1.0.5"
   }
